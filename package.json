@@ -1,0 +1,27 @@
+{
+  "name": "zap-cdk-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "baseline": "tsx bin/index.ts baseline-scan",
+    "fullscan": "tsx bin/index.ts fullscan",
+    "apiscan": "tsx bin/index.ts apiscan"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "@types/yargs": "^17.0.33",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.214.0",
+    "yargs": "^18.0.0",
+    "zap-cdk": "^0.0.0"
+  }
+}
