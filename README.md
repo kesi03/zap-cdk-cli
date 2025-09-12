@@ -1,2 +1,2 @@
-# zap-cdk-test
-setup to be able to test the zap-cdk package
+# zap-cdk-client
+Will eventually be used to create a zap-cdk project
