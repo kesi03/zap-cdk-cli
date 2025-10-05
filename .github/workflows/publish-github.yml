@@ -1,7 +1,7 @@
 name: Publish to GitHub Packages
 
 on:
-  workflow_dispatch:  # ✅ manual trigger only
+  workflow_dispatch:
 
 jobs:
   publish-github:
@@ -18,12 +18,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://npm.pkg.github.com/  # ✅ GitHub registry
+          registry-url: https://npm.pkg.github.com/
 
       - name: Enable Corepack and install pnpm
         run: |
           corepack enable
           corepack prepare pnpm@latest --activate
+
+      - name: Scope package name for GitHub Packages
+        run: |
+          node -e "
+            const fs = require('fs');
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            pkg.name = '@kesi03/' + pkg.name.replace(/^@.*\//, '');
+            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
+            console.log('✅ Scoped package name:', pkg.name);
+          "
 
       - name: Configure .npmrc
         run: |
