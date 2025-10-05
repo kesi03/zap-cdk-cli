@@ -1,7 +1,7 @@
 {
-  "name": "zap-cdk-test",
+  "name": "zap-cdk-client",
   "version": "1.0.0",
-  "description": "setup to be able to test the zap-cdk package",
+  "description": "zap cdk client",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
