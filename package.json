@@ -1,13 +1,14 @@
 {
   "name": "zap-cdk-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "setup to be able to test the zap-cdk package",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "baseline": "tsx bin/index.ts baseline-scan",
     "fullscan": "tsx bin/index.ts fullscan",
-    "apiscan": "tsx bin/index.ts apiscan"
+    "apiscan": "tsx bin/index.ts apiscan",
+    "new": "tsx bin/index.ts create"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +22,12 @@
   },
   "dependencies": {
     "aws-cdk-lib": "^2.214.0",
+    "execa": "^9.6.0",
+    "projen": "^0.97.0",
     "yargs": "^18.0.0",
     "zap-cdk": "^0.0.0"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
