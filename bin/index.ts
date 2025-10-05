@@ -2,12 +2,13 @@
 import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
 import ZapCdkManager from '../lib/cdk';
-import { createProject } from '../lib/cdk/create';
 import { execSync } from 'child_process';
 import { createZapTsProject } from '../lib/cdk/templates/typescript';
 import { createZapPyProject } from '../lib/cdk/templates/python';
 import { createZapJavaProject } from '../lib/cdk/templates/java';
 import { createZapGoProject } from '../lib/cdk/templates/golang';
+import { createZapCsharpProject } from '../lib/cdk/templates/csharp';
+import { resolve } from 'path';
 
 const argv = yargs(hideBin(process.argv))
   .command('baseline-scan', 'Export baseline yaml', {}, () => {
@@ -23,7 +24,7 @@ const argv = yargs(hideBin(process.argv))
     //ZapCdkManager.exportApiScan?.(); // Add logic in ZapCdkManager
   })
   .command(
-    'create <language> [name]',
+    'new <language> [name]',
     'Scaffold a new CDK project',
     (yargs) =>
       yargs
@@ -52,10 +53,13 @@ const argv = yargs(hideBin(process.argv))
           createZapPyProject(name);
           break;
         case 'java':
-          createZapJavaProject(name); // Implement similarly to TS and Python
+          createZapJavaProject(name);
           break;
         case 'go':
-          createZapGoProject(name); // Implement similarly to TS and Python
+          createZapGoProject(name);
+          break;
+        case 'csharp':
+          createZapCsharpProject(name);
           break;
         default:
           console.error(`Unsupported language: ${language}`);
@@ -64,9 +68,23 @@ const argv = yargs(hideBin(process.argv))
       console.log(`✅ Project ${name} created successfully!`);
     }
   )
-  .command('synth', 'Run cdk synth in current project', {}, () => {
-    console.log('Running CDK synth...');
-    execSync('npx cdk synth', { stdio: 'inherit' });
-  })
+  .command(
+    'synth [target]',
+    'Run cdk synth in a target project folder',
+    (yargs) =>
+      yargs.positional('target', {
+        type: 'string',
+        describe: 'Path to the CDK project folder',
+        default: '.', // fallback to current directory
+      }),
+    ({ target }) => {
+      const resolved = resolve(target);
+      console.log(`Running CDK synth in: ${resolved}`);
+      execSync('npx cdk synth', {
+        stdio: 'inherit',
+        cwd: resolved,
+      });
+    }
+  )
   .help()
   .argv;

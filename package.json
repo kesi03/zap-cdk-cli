@@ -8,7 +8,8 @@
     "baseline": "tsx bin/index.ts baseline-scan",
     "fullscan": "tsx bin/index.ts fullscan",
     "apiscan": "tsx bin/index.ts apiscan",
-    "new": "tsx bin/index.ts create"
+    "new": "tsx bin/index.ts new",
+    "synth": "tsx bin/index.ts synth"
   },
   "keywords": [],
   "author": "",

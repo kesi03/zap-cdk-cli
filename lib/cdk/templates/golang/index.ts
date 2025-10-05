@@ -14,7 +14,7 @@ go 1.21
 
 require (
   github.com/aws/aws-cdk-go/awscdk v2.130.0
-  github.com/kesi03/zap.cdk v0.0.3
+  github.com/kesi03/zap-cdk-go v0.0.3
 )`
   );
 
@@ -25,7 +25,7 @@ require (
 
 import (
   "github.com/aws/aws-cdk-go/awscdk/v2"
-  "github.com/kesi03/zap.cdk/zap"
+  "github.com/kesi03/zap-cdk-go"
 )
 
 func main() {
