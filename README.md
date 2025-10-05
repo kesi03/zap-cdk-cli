@@ -1,7 +1,7 @@
 
 # ⚡️ Zap CDK CLI
 
-A command-line tool for scaffolding multi-language CDK projects and exporting scan configurations used by Zap Automation.
+A command-line tool for scaffolding multi-language Zap CDK projects and exporting scan configurations used by Zap Automation.
 
 ## 📦 Installation
 
