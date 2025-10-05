@@ -109,7 +109,7 @@ pnpm synth ../my-ts-app  # Synth in a specific folder
 ---
 
 ## ✅ To Do
-- Add ability to upload yaml to Zap using api
+- Add Deploy (ability to upload yaml to Zap using api)
   Look at https://www.zaproxy.org/docs/api/#introduction
 - Add ability create a docker file using projen and maybe even look at cdk-tf (Terraform)
   Look at https://www.zaproxy.org/docs/docker/about/
