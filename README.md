@@ -14,9 +14,9 @@ pnpm install
 Run commands using the provided scripts:
 
 ```bash
-pnpm baseline     # Export baseline scan YAML
-pnpm fullscan     # Export full scan YAML
-pnpm apiscan      # Export API scan YAML
+pnpm baseline     # Export baseline scan YAML example
+pnpm fullscan     # Export full scan YAML example
+pnpm apiscan      # Export API scan YAML example
 pnpm new          # Scaffold a new CDK project
 pnpm synth        # Run CDK synth in a project folder
 ```
@@ -107,3 +107,11 @@ pnpm synth ../my-ts-app  # Synth in a specific folder
 - Supports publishing to npm and GitHub Packages via GitHub Actions.
 
 ---
+
+## ✅ To Do
+- Add ability to upload yaml to Zap using api
+  Look at https://www.zaproxy.org/docs/api/#introduction
+- Add ability create a docker file using projen and maybe even look at cdk-tf (Terraform)
+  Look at https://www.zaproxy.org/docs/docker/about/
+- Fix golang and c# versions so has projen in it...
+- 
