@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "zap cdk client",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kesi03/zap-cdk-test.git"
+  },
+  "author": "Kester <kesi@icloud.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "baseline": "tsx bin/index.ts baseline-scan",
@@ -11,9 +20,12 @@
     "new": "tsx bin/index.ts new",
     "synth": "tsx bin/index.ts synth"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "zap",
+    "cdk",
+    "aws",
+    "security"
+  ],
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
     "@types/node": "^24.3.1",
