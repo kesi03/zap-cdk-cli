@@ -1,6 +1,6 @@
 {
   "name": "zap-cdk-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "zap cdk client",
   "main": "index.js",
   "repository": {
@@ -11,6 +11,9 @@
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "bin": {
+    "zap-cdk-client": "./bin/index.ts"
   },
   "scripts": {
     "baseline": "tsx bin/index.ts baseline-scan",
