@@ -76,7 +76,9 @@ const argv = yargs(hideBin(process.argv))
         type: 'string',
         describe: 'Path to the CDK project folder',
         default: '.', // fallback to current directory
-      }),
+      })
+     
+      ,
     ({ target }) => {
       const resolved = resolve(target);
       console.log(`Running CDK synth in: ${resolved}`);
@@ -86,5 +88,36 @@ const argv = yargs(hideBin(process.argv))
       });
     }
   )
+  .command(
+    'deploy [target]',
+    'Run automation based on synthed file',
+    (yargs) =>
+      yargs.positional('target', {
+        type: 'string',
+        describe: 'Path to the CDK project folder',
+        default: '.', // fallback to current directory
+      }) .positional('platform', {
+        type: 'string',
+        describe: 'The container platform to use',
+        choices: ['docker', 'podman'],
+        default: 'docker', // fallback to docker
+      }),
+      
+    (args) => {
+      const {target,platform} = args;
+      const resolved = resolve(target);
+      console.log(`Running CDK synth in: ${resolved}`);
+      execSync('npx cdk synth', {
+        stdio: 'inherit',
+        cwd: resolved,
+      });
+      console.log(`Running CDK deploy in: ${resolved}`);
+      execSync(`${platform} run -v $(pwd):/zap/wrk/:rw -t zaproxy/zap-stable zap.sh -cmd -autorun /zap/wrk/zap.yaml`, {
+        stdio: 'inherit',
+        cwd: resolved,
+      });
+    }
+  )
+  .demandCommand(1, 'You need at least one command before moving on')
   .help()
   .argv;
