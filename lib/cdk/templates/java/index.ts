@@ -13,7 +13,7 @@ export function createZapJavaProject(name: string) {
     groupId: 'io.github.kesi03',
     version: '0.0.1',
     cdkVersion: '2.130.0',
-    deps: ['io.github.kesi03/zap.cdk:0.0.3'], // ✅ your custom dependency
+    deps: ['io.github.kesi03/zap.cdk:0.0.4'], // ✅ your custom dependency
     mainClass: 'io.github.kesi03.zap.Main',
   });
 

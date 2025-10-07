@@ -16,7 +16,7 @@ export function createZapGoProject(name: string) {
     outdir,
     defaultReleaseBranch: 'main',
     gitignore: ['.env', 'bin/', 'node_modules/', '*.log', '*.tmp', 'dist/', 'go/bin/', 'go/pkg/', 'go/src/'],
-    deps: ['zap-cdk@^0.0.3'],
+    deps: ['zap-cdk@^0.0.4'],
     devDeps: ['@types/node','typescript', 'tsx@^3.12.7', 'aws-cdk@^2.130.0', 'projen@^0.70.0','zap-cdk-client'],
     packageManager: NodePackageManager.PNPM,
     pnpmVersion: '8.9.0',
@@ -38,7 +38,7 @@ export function createZapGoProject(name: string) {
       '',
       'require (',
       '  github.com/aws/aws-cdk-go/awscdk/v2 v2.130.0',
-      '  github.com/kesi03/zap-cdk-go v0.0.3',
+      '  github.com/kesi03/zap-cdk-go v0.0.4',
       ')',
     ],
   });

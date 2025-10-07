@@ -15,7 +15,7 @@ export function createZapPyProject(name: string) {
     authorEmail: 'kester@example.com',
     version: '0.1.0',
     cdkVersion: '2.130.0',
-    deps: ['zap-cdk==0.0.3'],
+    deps: ['zap-cdk==0.0.4'],
   });
 
 

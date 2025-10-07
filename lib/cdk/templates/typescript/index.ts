@@ -15,7 +15,7 @@ export function createZapTsProject(name: string) {
         name,
         defaultReleaseBranch: 'main',
         cdkVersion: '2.130.0',
-        deps: ['zap-cdk@^0.0.3'],
+        deps: ['zap-cdk@^0.0.4'],
         devDeps: ['@types/node'],
         packageManager: NodePackageManager.PNPM, 
         pnpmVersion: '8.9.0',

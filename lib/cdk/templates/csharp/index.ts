@@ -17,7 +17,7 @@ export function createZapCsharpProject(name: string) {
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Amazon.CDK" Version="2.130.0" />
-    <PackageReference Include="com.mockholm.zap.cdk" Version="0.0.3" />
+    <PackageReference Include="com.mockholm.zap.cdk" Version="0.0.4" />
   </ItemGroup>
 </Project>`
   );
